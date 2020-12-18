@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaySpace", "PlaySpace.csproj", "{A0DF3DB7-9008-4B45-42C0-D398B94F809F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player.csproj", "{6002F2B4-1107-E72A-0614-A4BC270A406A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller.csproj", "{B89A4313-A194-606D-EE6E-5F17385D1D08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common.csproj", "{0E062A68-C5C1-6F74-F234-C86C6C314FFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0DF3DB7-9008-4B45-42C0-D398B94F809F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0DF3DB7-9008-4B45-42C0-D398B94F809F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0DF3DB7-9008-4B45-42C0-D398B94F809F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0DF3DB7-9008-4B45-42C0-D398B94F809F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6002F2B4-1107-E72A-0614-A4BC270A406A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6002F2B4-1107-E72A-0614-A4BC270A406A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6002F2B4-1107-E72A-0614-A4BC270A406A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6002F2B4-1107-E72A-0614-A4BC270A406A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89A4313-A194-606D-EE6E-5F17385D1D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89A4313-A194-606D-EE6E-5F17385D1D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89A4313-A194-606D-EE6E-5F17385D1D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89A4313-A194-606D-EE6E-5F17385D1D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E062A68-C5C1-6F74-F234-C86C6C314FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E062A68-C5C1-6F74-F234-C86C6C314FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E062A68-C5C1-6F74-F234-C86C6C314FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E062A68-C5C1-6F74-F234-C86C6C314FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
