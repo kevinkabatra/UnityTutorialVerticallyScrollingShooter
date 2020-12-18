@@ -16,37 +16,51 @@ public class ObjectPositionHandler
 
     public Vector2 UpdatePosition()
     {
-        var updatedPositionX = AdjustPositionToKeepObjectOnScreen(GetPositionInUnits().x);
-        var updatedPositionY = AdjustPositionToKeepObjectOnScreen(GetPositionInUnits().y);
-
-        var newPosition = new Vector2(updatedPositionX, updatedPositionY);
-        return newPosition;
+        var updatedPosition = AdjustPositionToKeepObjectOnScreen(GetPositionInUnits());
+        return updatedPosition;
     }
 
     public Vector2 UpdatePositionX()
     {
-        var updatedPositionX = AdjustPositionToKeepObjectOnScreen(GetPositionInUnits().x);
-        
-        var newPosition = new Vector2(updatedPositionX, gameObject.transform.position.y);
-        return newPosition;
+        var expectedPosition = new Vector2
+        {
+            x = GetPositionInUnits().x,
+            y = gameObject.transform.position.y
+        };
 
+        var updatedPosition = AdjustPositionToKeepObjectOnScreen(expectedPosition);
+        return updatedPosition;
     }
 
     public Vector2 UpdatePositionY()
     {
-        var updatedPositionY = AdjustPositionToKeepObjectOnScreen(GetPositionInUnits().y);
-        
-        var newPosition = new Vector2(gameObject.transform.position.x, updatedPositionY);
-        return newPosition;
+        var expectedPosition = new Vector2
+        {
+            x = gameObject.transform.position.x,
+            y = GetPositionInUnits().y
+        };
+
+        var updatedPosition = AdjustPositionToKeepObjectOnScreen(expectedPosition);
+        return updatedPosition;
     }
 
-    private float AdjustPositionToKeepObjectOnScreen(float expectedPosition)
+    private Vector2 AdjustPositionToKeepObjectOnScreen(Vector2 expectedPosition)
     {
         var worldUnitsToCenterPointOfSprite = GetWorldUnitsToCenterPointOfSprite();
-        var minimumPositionToKeepPaddleOnScreen = 0 + worldUnitsToCenterPointOfSprite;
-        var maximumPositionToKeepPaddleOnScreen = screenWidthInUnits - worldUnitsToCenterPointOfSprite;
-        var actualPosition = Mathf.Clamp(expectedPosition, minimumPositionToKeepPaddleOnScreen, maximumPositionToKeepPaddleOnScreen);
-        return actualPosition;
+        
+        var minimumPositionXToKeepPaddleOnScreen = 0 + worldUnitsToCenterPointOfSprite.x;
+        var maximumPositionXToKeepPaddleOnScreen = screenWidthInUnits - worldUnitsToCenterPointOfSprite.x;
+        var actualPositionX = Mathf.Clamp(expectedPosition.x, minimumPositionXToKeepPaddleOnScreen, maximumPositionXToKeepPaddleOnScreen);
+
+        var minimumPositionYToKeepPaddleOnScreen = 0 + worldUnitsToCenterPointOfSprite.y;
+        var maximumPositionYToKeepPaddleOnScreen = screenHeightInUnits - worldUnitsToCenterPointOfSprite.y;
+        var actualPositionY = Mathf.Clamp(expectedPosition.y, minimumPositionYToKeepPaddleOnScreen, maximumPositionYToKeepPaddleOnScreen);
+
+        return new Vector2
+        {
+            x = actualPositionX,
+            y = actualPositionY
+        };
     }
 
     private Vector2 GetPositionInUnits()
@@ -80,11 +94,18 @@ public class ObjectPositionHandler
         };
     }
 
-    private float GetWorldUnitsToCenterPointOfSprite()
+    private Vector2 GetWorldUnitsToCenterPointOfSprite()
     {
         var spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         var sprite = spriteRenderer.sprite;
-        var worldUnitsToCenterPointOfSprite = sprite.rect.center.x / sprite.pixelsPerUnit;
-        return worldUnitsToCenterPointOfSprite;
+        
+        var worldUnitsToXCenterPointOfSprite = sprite.rect.center.x / sprite.pixelsPerUnit;
+        var worldUnitsToYCenterPointOfSprite = sprite.rect.center.y / sprite.pixelsPerUnit;
+
+        return new Vector2
+        {
+            x = worldUnitsToXCenterPointOfSprite,
+            y = worldUnitsToYCenterPointOfSprite
+        };
     }
 }
