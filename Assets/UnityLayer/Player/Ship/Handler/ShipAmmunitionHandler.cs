@@ -6,9 +6,12 @@
 
     public class ShipAmmunitionHandler : Common<ShipAmmunitionHandler>
     {
-        [SerializeField] private GameObject laserTest;
+        [SerializeField] private GameObject laser;
+        [SerializeField] private float fireRate = .0001f;
 
+        private float _coolDown = 0f;
         private Ship _ship;
+        private Vector2 _shipCurrentPosition;
         private Vector2 _centerPointOfShip;
 
         private void Start()
@@ -19,20 +22,36 @@
 
         private void Update()
         {
-            FireMainCannon();
+            if (_coolDown > 0)
+            {
+                _coolDown -= Time.deltaTime;
+                Debug.Log(_coolDown);
+                return;
+            }
+
+            HandleFiring();
         }
 
         private void FireMainCannon()
         {
-            var shipCurrentPosition = _ship.transform.position;
-
-            var laserInstance = Instantiate<GameObject>(laserTest);
-            laserInstance.transform.position = new Vector3
+            var laserInstance = Instantiate<GameObject>(laser);
+            laserInstance.transform.position = new Vector2
             {
-                x = shipCurrentPosition.x,
-                y = shipCurrentPosition.y + _centerPointOfShip.y,
-                z = shipCurrentPosition.z - 1
+                x = _shipCurrentPosition.x,
+                y = _shipCurrentPosition.y + _centerPointOfShip.y
             };
+        }
+
+        private void HandleFiring()
+        {
+            SetShipPositionForFiring();
+            FireMainCannon();
+            _coolDown = fireRate;
+        }
+
+        private void SetShipPositionForFiring()
+        {
+            _shipCurrentPosition = _ship.transform.position;
         }
     }
 }
