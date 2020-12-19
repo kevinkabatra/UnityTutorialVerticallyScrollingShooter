@@ -17,6 +17,17 @@ What the hell does that mean? Luckily the Wikipedia entry has a section for `Vis
 * Ships
     * Author: https://opengameart.org/users/skorpio
     * Link: https://opengameart.org/content/space-ship-construction-kit
+* More Ships
+    * Author: https://opengameart.org/users/master484
+    * Link: https://opengameart.org/content/1616-ship-collection
+* Ammunition & Lasers
+    * Author: https://opengameart.org/users/master484
+    * Link: https://opengameart.org/content/bullet-collection-1-m484
+    * Link: https://opengameart.org/content/bullet-collection-2-m484-games
+    * Link: https://opengameart.org/content/side-blaster-gfx-m484-games
+* Explosions:
+    * Author: https://opengameart.org/users/master484
+    * Link: https://opengameart.org/content/explosion-set-2-m484-games
 * Background images that were combined to make the parallax background
     * Author: https://opengameart.org/users/theclicketyboom
     * Link: https://opengameart.org/content/3-layer-parallax-star-and-nebula-field

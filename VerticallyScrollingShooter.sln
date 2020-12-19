@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common.csproj", "{682A060E-C1C5-746F-F234-C86C6C314FFD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common.csproj", "{682a060e-c1c5-746f-f234-c86c6c314ffd}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaySpace", "PlaySpace.csproj", "{B73DDFA0-0890-454B-42C0-D398B94F809F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaySpace", "PlaySpace.csproj", "{b73ddfa0-0890-454b-42c0-d398b94f809f}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller.csproj", "{13439AB8-94A1-6D60-EE6E-5F17385D1D08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller.csproj", "{13439ab8-94a1-6d60-ee6e-5f17385d1d08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player.csproj", "{B4F20260-0711-2AE7-0614-A4BC270A406A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player.csproj", "{b4f20260-0711-2ae7-0614-a4bc270a406a}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
