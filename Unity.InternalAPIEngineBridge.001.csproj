@@ -12,10 +12,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{682a060e-c1c5-746f-f234-c86c6c314ffd}</ProjectGuid>
+    <ProjectGuid>{fc8e0433-533e-7ce1-8661-809ede98fb5d}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Common</AssemblyName>
+    <AssemblyName>Unity.InternalAPIEngineBridge.001</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -50,9 +50,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\UnityLayer\Common\Position\ObjectPositionHandler.cs" />
-     <Compile Include="Assets\UnityLayer\Common\Common.cs" />
-     <None Include="Assets\UnityLayer\Common\Common.asmdef" />
+     <Compile Include="Library\PackageCache\com.unity.2d.common@3.0.1\Runtime\InternalBridge\AssemblyInfo.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.common@3.0.1\Runtime\InternalBridge\InternalEngineBridge.cs" />
+     <None Include="Library\PackageCache\com.unity.2d.common@3.0.1\Runtime\InternalBridge\InternalBridgeDef.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

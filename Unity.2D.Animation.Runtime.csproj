@@ -12,10 +12,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{682a060e-c1c5-746f-f234-c86c6c314ffd}</ProjectGuid>
+    <ProjectGuid>{9feae12d-c0a0-b3c6-2a57-dd0024358729}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Common</AssemblyName>
+    <AssemblyName>Unity.2D.Animation.Runtime</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -29,7 +29,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -39,7 +39,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
-    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
@@ -50,9 +50,25 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\UnityLayer\Common\Position\ObjectPositionHandler.cs" />
-     <Compile Include="Assets\UnityLayer\Common\Common.cs" />
-     <None Include="Assets\UnityLayer\Common\Common.asmdef" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\NativeArrayHelper.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\DeformSpriteSystem.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\Components.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\PrepareSkinningSystem.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\SpriteLib\SpriteLibrary.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\SpriteLib\SpriteResolver.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\UpdateBoundsSystem.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\SpriteSkinEntity.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\SpriteSkinUtility.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\SpriteSkin.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\SpriteLib\SpriteLibraryAsset.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\NativeCustomSlice.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\AssemblyInfo.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\SpriteSkinBatch.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\SpriteSkinComposite.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\SpriteSkinManager.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\TransformAccessJob.cs" />
+     <Compile Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\UpdateBoundsJob.cs" />
+     <None Include="Library\PackageCache\com.unity.2d.animation@4.2.6\Runtime\Unity.2D.Animation.Runtime.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -604,6 +620,18 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
+      <Project>{efd34b97-0cda-4c6d-c21b-0158360c6e01}</Project>
+      <Name>Unity.2D.Common.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
+      <Project>{fc8e0433-533e-7ce1-8661-809ede98fb5d}</Project>
+      <Name>Unity.InternalAPIEngineBridge.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{4c9419e7-f976-5dbe-06e5-ab11d768d12f}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{5fb85cdd-a6db-b042-2b33-6a69be53a02a}</Project>
       <Name>UnityEditor.UI</Name>

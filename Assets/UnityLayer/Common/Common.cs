@@ -1,17 +1,20 @@
-﻿using UnityEngine;
-
-/// <summary>
-///     Common data model.
-/// </summary>
-/// <typeparam name="T"></typeparam>
-public class Common<T> : MonoBehaviour where T : Object
+﻿namespace UnityLayer.Common
 {
+    using UnityEngine;
+
     /// <summary>
-    ///     Gets this.
+    ///     Common data model.
     /// </summary>
-    /// <returns></returns>
-    public static T Get()
+    /// <typeparam name="T"></typeparam>
+    public class Common<T> : MonoBehaviour where T : Object
     {
-        return FindObjectOfType<T>();
-    }
+        /// <summary>
+        ///     Gets this.
+        /// </summary>
+        /// <returns></returns>
+        public static T Get()
+        {
+            return FindObjectOfType<T>();
+        }
+    }    
 }

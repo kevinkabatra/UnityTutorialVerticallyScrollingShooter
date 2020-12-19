@@ -12,10 +12,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{682a060e-c1c5-746f-f234-c86c6c314ffd}</ProjectGuid>
+    <ProjectGuid>{59aca110-3ee8-ebc3-26a6-fa8f53f32db8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Common</AssemblyName>
+    <AssemblyName>Unity.Recorder</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -50,9 +50,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\UnityLayer\Common\Position\ObjectPositionHandler.cs" />
-     <Compile Include="Assets\UnityLayer\Common\Common.cs" />
-     <None Include="Assets\UnityLayer\Common\Common.asmdef" />
+     <Compile Include="Library\PackageCache\com.unity.recorder@2.4.0-preview.1\Runtime\SerializedDictionnary.cs" />
+     <Compile Include="Library\PackageCache\com.unity.recorder@2.4.0-preview.1\Runtime\RecorderBindings.cs" />
+     <None Include="Library\PackageCache\com.unity.recorder@2.4.0-preview.1\Runtime\Unity.Recorder.asmdef" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.11f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -604,6 +604,10 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{a729e5fb-facb-c6bc-70ab-59832413fe29}</Project>
+      <Name>Unity.Timeline</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{5fb85cdd-a6db-b042-2b33-6a69be53a02a}</Project>
       <Name>UnityEditor.UI</Name>
