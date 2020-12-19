@@ -8,18 +8,15 @@
         private readonly float _screenHeightInUnits;
 
         private readonly GameObject _gameObject;
-        private SpriteRenderer _spriteRenderer;
+        private readonly SpriteRenderer _spriteRenderer;
 
         public ObjectPositionHandler(GameObject gameObject, float screenWidthInUnits = 16f, float screenHeightInUnits = 12f)
         {
             _gameObject = gameObject;
+            _spriteRenderer = _gameObject.GetComponent<SpriteRenderer>();
+
             _screenWidthInUnits = screenWidthInUnits;
             _screenHeightInUnits = screenHeightInUnits;
-        }
-
-        private void Start()
-        {
-            _spriteRenderer = _gameObject.GetComponent<SpriteRenderer>();
         }
 
         public Vector2 UpdatePosition()
