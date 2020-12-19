@@ -813,5 +813,9 @@ PrefabInstance:
       propertyPath: m_UseFullKinematicContacts
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6690896900345412680, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
+      propertyPath: laserTest
+      value: 
+      objectReference: {fileID: 7838742073483223484, guid: 3413e1ac2c89e9a428d32ec0ad26dc7c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
