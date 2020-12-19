@@ -1,0 +1,27 @@
+# ignore settings
+/.vs/
+*.suo
+/.idea/
+*.user
+
+# ignore Unity directories that regenerate
+/Library/
+/Logs/
+/Temp/
+
+# ignore all unity layer build outputs
+/bin/
+/obj/
+
+# ignore all business logic build outputs
+*/bin/
+*/obj/
+
+# ignore all reference assemblies, these are published by building the related business logic project.
+Assets/References/
+
+# ignore all testing scenes, these are created by the Unity Testing Framework when running unit tests.
+InitTestScene*
+
+/WebGLBuild/
+/Recordings/
