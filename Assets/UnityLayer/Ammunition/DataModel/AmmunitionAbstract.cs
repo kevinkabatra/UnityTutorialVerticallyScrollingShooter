@@ -1,6 +1,5 @@
 ﻿namespace UnityLayer.Ammunition.DataModel
 {
-    using System;
     using UnityEngine;
 
     public abstract class AmmunitionAbstract : MonoBehaviour
@@ -26,7 +25,10 @@
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.CompareTag("Ammunition"))
+            if(
+                collision.gameObject.CompareTag("Ammunition") ||
+                collision.gameObject.CompareTag("Player")
+            )
             {
                 Physics2D.IgnoreCollision(collision.collider, _thisCollider);
             }

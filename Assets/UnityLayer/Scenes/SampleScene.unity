@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -180,6 +181,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834d5edabf06ecc49bc7e2380f951d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -702,11 +715,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4194547196591811911, guid: 83ffcd1e5727b43429674452fb155b69, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.024
+      value: 8.352
       objectReference: {fileID: 0}
     - target: {fileID: 4194547196591811911, guid: 83ffcd1e5727b43429674452fb155b69, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.795
+      value: 6.183
       objectReference: {fileID: 0}
     - target: {fileID: 4194547196591811911, guid: 83ffcd1e5727b43429674452fb155b69, type: 3}
       propertyPath: m_LocalPosition.z
@@ -760,6 +773,10 @@ PrefabInstance:
     - target: {fileID: 5782399082365852939, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
       propertyPath: m_Name
       value: PlayerShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782399082365852939, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5782399082365852940, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
       propertyPath: m_LocalPosition.x
@@ -817,5 +834,13 @@ PrefabInstance:
       propertyPath: laserTest
       value: 
       objectReference: {fileID: 7838742073483223484, guid: 3413e1ac2c89e9a428d32ec0ad26dc7c, type: 3}
+    - target: {fileID: 6690896900345412680, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 7838742073483223484, guid: 3413e1ac2c89e9a428d32ec0ad26dc7c, type: 3}
+    - target: {fileID: 6690896900345412680, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
+      propertyPath: fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}

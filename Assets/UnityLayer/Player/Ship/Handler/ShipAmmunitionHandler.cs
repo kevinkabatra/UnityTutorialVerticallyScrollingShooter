@@ -7,9 +7,11 @@
     public class ShipAmmunitionHandler : Common<ShipAmmunitionHandler>
     {
         [SerializeField] private GameObject laser;
-        [SerializeField] private float fireRate = .0001f;
+        [SerializeField] private float fireRate = 5f;
 
-        private float _coolDown = 0f;
+        private const float BaseCoolDown = 1f;
+        private float _currentCoolDown = BaseCoolDown;
+
         private Ship _ship;
         private Vector2 _shipCurrentPosition;
         private Vector2 _centerPointOfShip;
@@ -22,10 +24,10 @@
 
         private void Update()
         {
-            if (_coolDown > 0)
+            if (_currentCoolDown > 0)
             {
-                _coolDown -= Time.deltaTime;
-                Debug.Log(_coolDown);
+                var coolDownReduction = Time.deltaTime * fireRate;
+                _currentCoolDown -= coolDownReduction;
                 return;
             }
 
@@ -46,7 +48,7 @@
         {
             SetShipPositionForFiring();
             FireMainCannon();
-            _coolDown = fireRate;
+            _currentCoolDown = BaseCoolDown;
         }
 
         private void SetShipPositionForFiring()

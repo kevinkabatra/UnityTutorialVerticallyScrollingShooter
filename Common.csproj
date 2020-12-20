@@ -53,6 +53,7 @@
      <Compile Include="Assets\UnityLayer\Common\Position\ObjectPositionHandler.cs" />
      <Compile Include="Assets\UnityLayer\Common\Common.cs" />
      <Compile Include="Assets\UnityLayer\Common\Position\SpritePositionHandler.cs" />
+     <Compile Include="Assets\UnityLayer\Common\FrameRate\FrameRateLimiter.cs" />
      <None Include="Assets\UnityLayer\Common\Common.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/VerticallyScrollingShooter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
