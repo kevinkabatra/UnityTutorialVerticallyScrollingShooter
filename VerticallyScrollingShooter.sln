@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Controller.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player", "Player.csproj", "{b4f20260-0711-2ae7-0614-a4bc270a406a}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{bf888e06-e832-38a9-84a0-d79eae39c9f7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{b4f20260-0711-2ae7-0614-a4bc270a406a}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{b4f20260-0711-2ae7-0614-a4bc270a406a}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{b4f20260-0711-2ae7-0614-a4bc270a406a}.Release|Any CPU.Build.0 = Release|Any CPU
+		{bf888e06-e832-38a9-84a0-d79eae39c9f7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{bf888e06-e832-38a9-84a0-d79eae39c9f7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{bf888e06-e832-38a9-84a0-d79eae39c9f7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{bf888e06-e832-38a9-84a0-d79eae39c9f7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

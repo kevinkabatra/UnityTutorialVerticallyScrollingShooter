@@ -51,6 +51,8 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\UnityLayer\Player\Ship\Handler\ShipPositionHandler.cs" />
+     <Compile Include="Assets\UnityLayer\Player\Ship\Handler\ShipAmmunitionHandler.cs" />
+     <Compile Include="Assets\UnityLayer\Player\Ship\DataModel\Ship.cs" />
      <None Include="Assets\UnityLayer\Player\Player.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/VerticallyScrollingShooter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
@@ -258,9 +260,6 @@
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
- <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.11f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

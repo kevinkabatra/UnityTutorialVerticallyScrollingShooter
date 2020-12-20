@@ -6,14 +6,17 @@
     {
         private readonly float _screenWidthInUnits;
         private readonly float _screenHeightInUnits;
+        private readonly Vector2 _worldUnitsToCenterPointOfSprite;
 
         private readonly GameObject _gameObject;
-        private readonly SpriteRenderer _spriteRenderer;
 
         public ObjectPositionHandler(GameObject gameObject, float screenWidthInUnits = 16f, float screenHeightInUnits = 12f)
         {
             _gameObject = gameObject;
-            _spriteRenderer = _gameObject.GetComponent<SpriteRenderer>();
+
+            var spriteRenderer = _gameObject.GetComponent<SpriteRenderer>();
+            var spritePositionHandler = new SpritePositionHandler(spriteRenderer);
+            _worldUnitsToCenterPointOfSprite = spritePositionHandler.GetWorldUnitsToCenterPointOfSprite();
 
             _screenWidthInUnits = screenWidthInUnits;
             _screenHeightInUnits = screenHeightInUnits;
@@ -51,14 +54,12 @@
 
         private Vector2 AdjustPositionToKeepObjectOnScreen(Vector2 expectedPosition)
         {
-            var worldUnitsToCenterPointOfSprite = GetWorldUnitsToCenterPointOfSprite();
-            
-            var minimumPositionXToKeepPaddleOnScreen = 0 + worldUnitsToCenterPointOfSprite.x;
-            var maximumPositionXToKeepPaddleOnScreen = _screenWidthInUnits - worldUnitsToCenterPointOfSprite.x;
+            var minimumPositionXToKeepPaddleOnScreen = _worldUnitsToCenterPointOfSprite.x;
+            var maximumPositionXToKeepPaddleOnScreen = _screenWidthInUnits - _worldUnitsToCenterPointOfSprite.x;
             var actualPositionX = Mathf.Clamp(expectedPosition.x, minimumPositionXToKeepPaddleOnScreen, maximumPositionXToKeepPaddleOnScreen);
 
-            var minimumPositionYToKeepPaddleOnScreen = 0 + worldUnitsToCenterPointOfSprite.y;
-            var maximumPositionYToKeepPaddleOnScreen = _screenHeightInUnits - worldUnitsToCenterPointOfSprite.y;
+            var minimumPositionYToKeepPaddleOnScreen = _worldUnitsToCenterPointOfSprite.y;
+            var maximumPositionYToKeepPaddleOnScreen = _screenHeightInUnits - _worldUnitsToCenterPointOfSprite.y;
             var actualPositionY = Mathf.Clamp(expectedPosition.y, minimumPositionYToKeepPaddleOnScreen, maximumPositionYToKeepPaddleOnScreen);
 
             return new Vector2
@@ -96,20 +97,6 @@
             {
                 x = inputPositionXInUnits,
                 y = inputPositionYInUnits
-            };
-        }
-
-        private Vector2 GetWorldUnitsToCenterPointOfSprite()
-        {
-            var sprite = _spriteRenderer.sprite;
-            
-            var worldUnitsToXCenterPointOfSprite = sprite.rect.center.x / sprite.pixelsPerUnit;
-            var worldUnitsToYCenterPointOfSprite = sprite.rect.center.y / sprite.pixelsPerUnit;
-
-            return new Vector2
-            {
-                x = worldUnitsToXCenterPointOfSprite,
-                y = worldUnitsToYCenterPointOfSprite
             };
         }
     }
