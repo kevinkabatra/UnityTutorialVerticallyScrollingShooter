@@ -31,3 +31,8 @@ What the hell does that mean? Luckily the Wikipedia entry has a section for `Vis
 * Background images that were combined to make the parallax background
     * Author: https://opengameart.org/users/theclicketyboom
     * Link: https://opengameart.org/content/3-layer-parallax-star-and-nebula-field
+  
+* Sounds
+  * Laser 4: 
+      * Author: https://freesound.org/people/marcuslee/
+      * Link: https://freesound.org/people/marcuslee/sounds/42106/ 
