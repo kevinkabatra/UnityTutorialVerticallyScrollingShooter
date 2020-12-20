@@ -22,7 +22,7 @@
           }
       }
 
-      private void DestroyShip()
+      protected virtual void DestroyShip()
       {
           Destroy(gameObject);
       }

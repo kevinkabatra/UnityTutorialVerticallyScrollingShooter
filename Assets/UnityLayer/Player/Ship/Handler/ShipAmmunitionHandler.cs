@@ -36,7 +36,7 @@
 
         private void FireMainCannon()
         {
-            var laserInstance = Instantiate<GameObject>(laser);
+            var laserInstance = Instantiate(laser);
             laserInstance.transform.position = new Vector2
             {
                 x = _shipCurrentPosition.x,

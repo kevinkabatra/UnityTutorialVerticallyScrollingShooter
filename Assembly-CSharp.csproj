@@ -54,6 +54,8 @@
      <Compile Include="Assets\UnityLayer\Ammunition\DataModel\AmmunitionAbstract.cs" />
      <Compile Include="Assets\UnityLayer\Enemy\Ship\DataModel\EnemyShip.cs" />
      <Compile Include="Assets\UnityLayer\Enemy\Ship\DataModel\SmallYellowScout.cs" />
+     <Compile Include="Assets\UnityLayer\Enemy\Ship\DataModel\SmallEnemyShip.cs" />
+     <Compile Include="Assets\UnityLayer\Explosions\DataModel\SmallShipExplosion.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/VerticallyScrollingShooter/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

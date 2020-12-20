@@ -198,3 +198,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca8e8ae9a434bc39f8d42afb4f63cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionAnimation: {fileID: 4671479943528301749, guid: d71a873ad04a01f44b63fe8a52c3ed55, type: 3}
