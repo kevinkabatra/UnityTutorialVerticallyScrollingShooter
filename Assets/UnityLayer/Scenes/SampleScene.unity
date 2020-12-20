@@ -1037,10 +1037,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShip
       objectReference: {fileID: 0}
-    - target: {fileID: 5782399082365852939, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 5782399082365852940, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8
@@ -1084,26 +1080,6 @@ PrefabInstance:
     - target: {fileID: 5782399082365852940, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6682096977956056136, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6682096977956056136, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6690896900345412680, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
-      propertyPath: laserTest
-      value: 
-      objectReference: {fileID: 7838742073483223484, guid: 3413e1ac2c89e9a428d32ec0ad26dc7c, type: 3}
-    - target: {fileID: 6690896900345412680, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
-      propertyPath: laser
-      value: 
-      objectReference: {fileID: 7838742073483223484, guid: 3413e1ac2c89e9a428d32ec0ad26dc7c, type: 3}
-    - target: {fileID: 6690896900345412680, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}
-      propertyPath: fireRate
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 447be2ec87c27c44181a5b0af08fcb00, type: 3}

@@ -4,6 +4,8 @@
 
     public abstract class AmmunitionAbstract : MonoBehaviour
     {
+        public float damage = 1f;
+
         private Collider2D _thisCollider;
 
         private void Start()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4194547196591811912}
   - component: {fileID: 4194547196591811910}
   - component: {fileID: 7837227439793455495}
+  - component: {fileID: 7502995566513887435}
   m_Layer: 0
   m_Name: SmallYellowScout
   m_TagString: Untagged
@@ -185,3 +186,15 @@ PolygonCollider2D:
       - {x: -0.11, y: -0.24}
       - {x: -0.065, y: -0.265}
       - {x: 0, y: -0.275}
+--- !u!114 &7502995566513887435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194547196591811913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca8e8ae9a434bc39f8d42afb4f63cd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
