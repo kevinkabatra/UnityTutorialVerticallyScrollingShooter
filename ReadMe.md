@@ -33,6 +33,12 @@ What the hell does that mean? Luckily the Wikipedia entry has a section for `Vis
     * Link: https://opengameart.org/content/3-layer-parallax-star-and-nebula-field
   
 * Sounds
-  * Laser 4: 
-      * Author: https://freesound.org/people/marcuslee/
-      * Link: https://freesound.org/people/marcuslee/sounds/42106/ 
+    * Laser Sounds
+        * Laser
+            * Usage: This is the first laser noise that a player will encounter, it is the sound that is used when a laser is fired from the player's ship.
+            * Author: https://freesound.org/people/jobro/
+            * Link: https://freesound.org/people/jobro/sounds/35679/
+    * Laser 4: 
+        * Author: https://freesound.org/people/marcuslee/
+        * Link: https://freesound.org/people/marcuslee/sounds/42106/ 
+    * 
