@@ -50,9 +50,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\UnityLayer\Player\Ship\DataModel\Ship.cs" />
      <Compile Include="Assets\UnityLayer\Player\Ship\Handler\ShipPositionHandler.cs" />
      <Compile Include="Assets\UnityLayer\Player\Ship\Handler\ShipAmmunitionHandler.cs" />
-     <Compile Include="Assets\UnityLayer\Player\Ship\DataModel\Ship.cs" />
      <None Include="Assets\UnityLayer\Player\Player.asmdef" />
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/VerticallyScrollingShooter/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

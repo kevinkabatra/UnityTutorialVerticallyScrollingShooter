@@ -9,6 +9,9 @@
 
       private void OnCollisionEnter2D(Collision2D collision)
       {
+          var ammunitionCollision = collision.gameObject.GetComponent<AmmunitionAbstract>();
+          if (ammunitionCollision == null) return;
+
           HandleDamage(collision.gameObject.GetComponent<AmmunitionAbstract>());
       }
 
