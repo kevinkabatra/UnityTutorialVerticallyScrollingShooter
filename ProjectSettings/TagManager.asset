@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ammunition
+  - Background
   layers:
   - Default
   - TransparentFX

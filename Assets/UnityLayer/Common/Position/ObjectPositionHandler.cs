@@ -10,7 +10,7 @@
 
         private readonly GameObject _gameObject;
 
-        public ObjectPositionHandler(GameObject gameObject, float screenWidthInUnits = 16f, float screenHeightInUnits = 12f)
+        public ObjectPositionHandler(GameObject gameObject)
         {
             _gameObject = gameObject;
 
@@ -18,8 +18,9 @@
             var spritePositionHandler = new SpritePositionHandler(spriteRenderer);
             _worldUnitsToCenterPointOfSprite = spritePositionHandler.GetWorldUnitsToCenterPointOfSprite();
 
-            _screenWidthInUnits = screenWidthInUnits;
-            _screenHeightInUnits = screenHeightInUnits;
+            var backgroundSize = GameObject.FindWithTag("Background").transform.localScale;
+            _screenWidthInUnits = backgroundSize.x;
+            _screenHeightInUnits = backgroundSize.y;
         }
 
         public Vector2 UpdatePosition()
