@@ -23,9 +23,10 @@
             _screenHeightInUnits = backgroundSize.y;
         }
 
-        public Vector2 UpdatePosition()
+        public Vector2 UpdatePosition(Vector2 changeInPosition)
         {
-            var updatedPosition = AdjustPositionToKeepObjectOnScreen(GetPositionInUnits());
+            //var updatedPosition = AdjustPositionToKeepObjectOnScreen(GetPositionInUnits());
+            var updatedPosition = AdjustPositionToKeepObjectOnScreen(changeInPosition);
             return updatedPosition;
         }
 
@@ -53,8 +54,14 @@
             return updatedPosition;
         }
 
-        private Vector2 AdjustPositionToKeepObjectOnScreen(Vector2 expectedPosition)
+        private Vector2 AdjustPositionToKeepObjectOnScreen(Vector2 changeInPosition)
         {
+            var expectedPosition = new Vector2
+            {
+                x = changeInPosition.x + _gameObject.transform.position.x,
+                y = changeInPosition.y + _gameObject.transform.position.y
+            };
+
             var minimumPositionXToKeepPaddleOnScreen = _worldUnitsToCenterPointOfSprite.x;
             var maximumPositionXToKeepPaddleOnScreen = _screenWidthInUnits - _worldUnitsToCenterPointOfSprite.x;
             var actualPositionX = Mathf.Clamp(expectedPosition.x, minimumPositionXToKeepPaddleOnScreen, maximumPositionXToKeepPaddleOnScreen);
