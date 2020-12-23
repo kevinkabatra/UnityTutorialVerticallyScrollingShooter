@@ -23,44 +23,53 @@
             _screenHeightInUnits = backgroundSize.y;
         }
 
-        public Vector2 UpdatePosition(Vector2 changeInPosition)
+        public Vector2 UpdatePosition(Vector2 changeInPosition, bool positionCoordinatesAreDelta)
         {
             //var updatedPosition = AdjustPositionToKeepObjectOnScreen(GetPositionInUnits());
-            var updatedPosition = AdjustPositionToKeepObjectOnScreen(changeInPosition);
+            var updatedPosition = AdjustPositionToKeepObjectOnScreen(changeInPosition, positionCoordinatesAreDelta);
             return updatedPosition;
         }
 
-        public Vector2 UpdatePositionX()
+        public Vector2 UpdatePositionX(Vector2 changeInPosition, bool positionCoordinatesAreDelta)
         {
             var expectedPosition = new Vector2
             {
-                x = GetPositionInUnits().x,
+                x = changeInPosition.x,
                 y = _gameObject.transform.position.y
             };
 
-            var updatedPosition = AdjustPositionToKeepObjectOnScreen(expectedPosition);
+            var updatedPosition = AdjustPositionToKeepObjectOnScreen(expectedPosition, positionCoordinatesAreDelta);
             return updatedPosition;
         }
 
-        public Vector2 UpdatePositionY()
+        public Vector2 UpdatePositionY(Vector2 changeInPosition, bool positionCoordinatesAreDelta)
         {
             var expectedPosition = new Vector2
             {
                 x = _gameObject.transform.position.x,
-                y = GetPositionInUnits().y
+                y = changeInPosition.y
             };
 
-            var updatedPosition = AdjustPositionToKeepObjectOnScreen(expectedPosition);
+            var updatedPosition = AdjustPositionToKeepObjectOnScreen(expectedPosition, positionCoordinatesAreDelta);
             return updatedPosition;
         }
 
-        private Vector2 AdjustPositionToKeepObjectOnScreen(Vector2 changeInPosition)
+        private Vector2 AdjustPositionToKeepObjectOnScreen(Vector2 changeInPosition, bool positionCoordinatesAreDelta)
         {
-            var expectedPosition = new Vector2
+            Vector2 expectedPosition;
+            if (positionCoordinatesAreDelta)
             {
-                x = changeInPosition.x + _gameObject.transform.position.x,
-                y = changeInPosition.y + _gameObject.transform.position.y
-            };
+                var positionLocalCache = _gameObject.transform.position;
+                expectedPosition = new Vector2
+                {
+                    x = changeInPosition.x + positionLocalCache.x,
+                    y = changeInPosition.y + positionLocalCache.y
+                };
+            }
+            else
+            {
+                expectedPosition = GetPositionInUnits(changeInPosition);
+            }
 
             var minimumPositionXToKeepPaddleOnScreen = _worldUnitsToCenterPointOfSprite.x;
             var maximumPositionXToKeepPaddleOnScreen = _screenWidthInUnits - _worldUnitsToCenterPointOfSprite.x;
@@ -77,30 +86,10 @@
             };
         }
 
-        private Vector2 GetPositionInUnits()
+        private Vector2 GetPositionInUnits(Vector2 changeInPosition)
         {
-            var inputPositionX = 0f;
-            var inputPositionY = 0f;
-
-            // Touch support input
-            if (Input.touchSupported && Input.touchCount != 0)
-            {
-                inputPositionX = Input.GetTouch(0).position.x;
-                inputPositionY = Input.GetTouch(0).position.y;
-            }
-
-            // Non-touch supported input
-            if (inputPositionX == 0f)
-            {
-                inputPositionX = Input.mousePosition.x;
-            }
-            if(inputPositionY == 0f)
-            {
-                inputPositionY = Input.mousePosition.y;
-            }
-
-            var inputPositionXInUnits = (inputPositionX / Screen.width) * _screenWidthInUnits;
-            var inputPositionYInUnits = (inputPositionY / Screen.height) * _screenHeightInUnits;
+            var inputPositionXInUnits = (changeInPosition.x / Screen.width) * _screenWidthInUnits;
+            var inputPositionYInUnits = (changeInPosition.y / Screen.height) * _screenHeightInUnits;
             return new Vector2
             {
                 x = inputPositionXInUnits,

@@ -51,6 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\UnityLayer\Controller\VirtualController.cs" />
+     <Compile Include="Assets\UnityLayer\Controller\ControlSchemes.cs" />
      <None Include="Assets\UnityLayer\Controller\Controller.asmdef" />
  <Reference Include="Unity.InputSystem">
  <HintPath>C:/Users/kevin/Documents/MySource/Unity Tutorials/VerticallyScrollingShooter/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
