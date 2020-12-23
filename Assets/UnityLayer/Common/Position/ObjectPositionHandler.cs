@@ -2,6 +2,9 @@
 {
     using UnityEngine;
 
+    /// <summary>
+    ///     Handler to control the position of any GameObject with a sprite.
+    /// </summary>
     public class ObjectPositionHandler
     {
         private readonly float _screenWidthInUnits;
@@ -10,6 +13,10 @@
 
         private readonly GameObject _gameObject;
 
+        /// <summary>
+        ///     Constructor.
+        /// </summary>
+        /// <param name="gameObject">The Game Object whose position will be controlled.</param>
         public ObjectPositionHandler(GameObject gameObject)
         {
             _gameObject = gameObject;
@@ -23,13 +30,24 @@
             _screenHeightInUnits = backgroundSize.y;
         }
 
+        /// <summary>
+        ///     Determines the new position that the Game Object should be in, will ensure that the object remains on the screen.
+        /// </summary>
+        /// <param name="changeInPosition">The change in position.</param>
+        /// <param name="positionCoordinatesAreDelta">Should the change in position be added to the previous position or should it be replaced by it?</param>
+        /// <returns></returns>
         public Vector2 UpdatePosition(Vector2 changeInPosition, bool positionCoordinatesAreDelta)
         {
-            //var updatedPosition = AdjustPositionToKeepObjectOnScreen(GetPositionInUnits());
             var updatedPosition = AdjustPositionToKeepObjectOnScreen(changeInPosition, positionCoordinatesAreDelta);
             return updatedPosition;
         }
 
+        /// <summary>
+        ///     Determines the new position that the Game Object should be in, will ensure that the object remains on the screen.
+        /// </summary>
+        /// <param name="changeInPosition">The change in position.</param>
+        /// <param name="positionCoordinatesAreDelta">Should the change in position be added to the previous position or should it be replaced by it?</param>
+        /// <returns></returns>
         public Vector2 UpdatePositionX(Vector2 changeInPosition, bool positionCoordinatesAreDelta)
         {
             var expectedPosition = new Vector2
@@ -42,6 +60,12 @@
             return updatedPosition;
         }
 
+        /// <summary>
+        ///     Determines the new position that the Game Object should be in, will ensure that the object remains on the screen.
+        /// </summary>
+        /// <param name="changeInPosition">The change in position.</param>
+        /// <param name="positionCoordinatesAreDelta">Should the change in position be added to the previous position or should it be replaced by it?</param>
+        /// <returns></returns>
         public Vector2 UpdatePositionY(Vector2 changeInPosition, bool positionCoordinatesAreDelta)
         {
             var expectedPosition = new Vector2
@@ -54,6 +78,12 @@
             return updatedPosition;
         }
 
+        /// <summary>
+        ///     Adjusts the expected change in position so that the new position will enable the game object to remain on the screen.
+        /// </summary>
+        /// <param name="changeInPosition">The change in position.</param>
+        /// <param name="positionCoordinatesAreDelta">Should the change in position be added to the previous position or should it be replaced by it?</param>
+        /// <returns></returns>
         private Vector2 AdjustPositionToKeepObjectOnScreen(Vector2 changeInPosition, bool positionCoordinatesAreDelta)
         {
             Vector2 expectedPosition;
@@ -86,6 +116,11 @@
             };
         }
 
+        /// <summary>
+        ///     Converts the change in position to world units, only used with non-delta based positioning (mouse).
+        /// </summary>
+        /// <param name="changeInPosition">The change in position.</param>
+        /// <returns></returns>
         private Vector2 GetPositionInUnits(Vector2 changeInPosition)
         {
             var inputPositionXInUnits = (changeInPosition.x / Screen.width) * _screenWidthInUnits;
