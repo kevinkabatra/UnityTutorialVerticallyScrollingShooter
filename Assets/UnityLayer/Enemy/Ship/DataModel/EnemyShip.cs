@@ -7,12 +7,12 @@
   {
       protected float Health = 1;
 
-      private void OnCollisionEnter2D(Collision2D collision)
+      private void OnTriggerEnter2D(Collider2D collisionCollider)
       {
-          var ammunitionCollision = collision.gameObject.GetComponent<AmmunitionAbstract>();
+          var ammunitionCollision = collisionCollider.gameObject.GetComponent<AmmunitionAbstract>();
           if (ammunitionCollision == null) return;
 
-          HandleDamage(collision.gameObject.GetComponent<AmmunitionAbstract>());
+          HandleDamage(collisionCollider.gameObject.GetComponent<AmmunitionAbstract>());
       }
 
       private void HandleDamage(AmmunitionAbstract ammunition)

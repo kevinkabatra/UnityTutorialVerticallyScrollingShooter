@@ -25,19 +25,25 @@
             transformLocalCache.position = positionLocalCache;
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnTriggerEnter2D(Collider2D collisionCollider)
+        {
+            HandleCollision(collisionCollider.gameObject, collisionCollider);
+        }
+
+        private void HandleCollision(GameObject collisionGameObject, Collider2D collisionCollider)
         {
             if(
-                collision.gameObject.CompareTag("Ammunition") ||
-                collision.gameObject.CompareTag("Player")
+                collisionGameObject.CompareTag("Ammunition") ||
+                collisionGameObject.CompareTag("Player")
             )
             {
-                Physics2D.IgnoreCollision(collision.collider, _thisCollider);
+                Physics2D.IgnoreCollision(collisionCollider, _thisCollider);
             }
             else
             {
                 Destroy(gameObject);
             }
         }
+
     }
 }
