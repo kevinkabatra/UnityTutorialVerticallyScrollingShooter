@@ -458,9 +458,6 @@ MonoBehaviour:
   positionUpdateEvent:
     m_PersistentCalls:
       m_Calls: []
-  testEventTrigger:
-    m_PersistentCalls:
-      m_Calls: []
   objectToBeControlled: {fileID: 906752867}
 --- !u!114 &1081870401
 MonoBehaviour:

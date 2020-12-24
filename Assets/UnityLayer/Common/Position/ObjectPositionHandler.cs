@@ -1,5 +1,6 @@
 ﻿namespace UnityLayer.Common.Position
 {
+    using System;
     using UnityEngine;
 
     /// <summary>
@@ -12,6 +13,11 @@
         private readonly Vector2 _worldUnitsToCenterPointOfSprite;
 
         private readonly GameObject _gameObject;
+
+        private float _minimumPositionXToKeepPaddleOnScreen;
+        private float _maximumPositionXToKeepPaddleOnScreen;
+        private float _minimumPositionYToKeepPaddleOnScreen;
+        private float _maximumPositionYToKeepPaddleOnScreen;
 
         /// <summary>
         ///     Constructor.
@@ -28,6 +34,8 @@
             var backgroundSize = GameObject.FindWithTag("Background").transform.localScale;
             _screenWidthInUnits = backgroundSize.x;
             _screenHeightInUnits = backgroundSize.y;
+
+            SetupViewportToWorldPoint();
         }
 
         /// <summary>
@@ -101,13 +109,8 @@
                 expectedPosition = GetPositionInUnits(changeInPosition);
             }
 
-            var minimumPositionXToKeepPaddleOnScreen = _worldUnitsToCenterPointOfSprite.x;
-            var maximumPositionXToKeepPaddleOnScreen = _screenWidthInUnits - _worldUnitsToCenterPointOfSprite.x;
-            var actualPositionX = Mathf.Clamp(expectedPosition.x, minimumPositionXToKeepPaddleOnScreen, maximumPositionXToKeepPaddleOnScreen);
-
-            var minimumPositionYToKeepPaddleOnScreen = _worldUnitsToCenterPointOfSprite.y;
-            var maximumPositionYToKeepPaddleOnScreen = _screenHeightInUnits - _worldUnitsToCenterPointOfSprite.y;
-            var actualPositionY = Mathf.Clamp(expectedPosition.y, minimumPositionYToKeepPaddleOnScreen, maximumPositionYToKeepPaddleOnScreen);
+            var actualPositionX = Mathf.Clamp(expectedPosition.x, _minimumPositionXToKeepPaddleOnScreen, _maximumPositionXToKeepPaddleOnScreen);
+            var actualPositionY = Mathf.Clamp(expectedPosition.y, _minimumPositionYToKeepPaddleOnScreen, _maximumPositionYToKeepPaddleOnScreen);
 
             return new Vector2
             {
@@ -130,6 +133,24 @@
                 x = inputPositionXInUnits,
                 y = inputPositionYInUnits
             };
+        }
+
+        /// <summary>
+        ///     Determines the game boundary based on the size of the camera.
+        /// </summary>
+        /// <exception cref="Exception"></exception>
+        private void SetupViewportToWorldPoint()
+        {
+            var camera = Camera.main;
+            if (camera == null)
+            {
+                throw new Exception("Cannot find camera object.");
+            }
+
+            _minimumPositionXToKeepPaddleOnScreen = camera.ViewportToWorldPoint(new Vector3()).x + _worldUnitsToCenterPointOfSprite.x;
+            _maximumPositionXToKeepPaddleOnScreen = camera.ViewportToWorldPoint(new Vector3(1,0)).x - _worldUnitsToCenterPointOfSprite.x;
+            _minimumPositionYToKeepPaddleOnScreen = camera.ViewportToWorldPoint(new Vector3()).y + _worldUnitsToCenterPointOfSprite.y;
+            _maximumPositionYToKeepPaddleOnScreen = camera.ViewportToWorldPoint(new Vector3(0,1)).y  - _worldUnitsToCenterPointOfSprite.y;
         }
     }
 }
